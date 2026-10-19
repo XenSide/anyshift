@@ -1,0 +1,10 @@
+[package]
+name = "gshift_bridge"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tungstenite = "0.30"
+
+[profile.release]
+strip = true
