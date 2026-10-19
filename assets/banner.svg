@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-labelledby="t d">
+  <title id="t">AnyShift</title>
+  <desc id="d">Hold a key on any keyboard to activate Logitech G-Shift on your mouse.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0e13"/>
+      <stop offset="1" stop-color="#161b24"/>
+    </linearGradient>
+    <linearGradient id="link" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff7a1a"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c323d"/>
+      <stop offset="1" stop-color="#1f242d"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c9d3e0"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".035"/>
+    </pattern>
+    <radialGradient id="glowO" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ff7a1a" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowC" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <style>
+    .press { animation: press 2.4s ease-in-out infinite; }
+    .on { opacity: 0; animation: on 2.4s ease-in-out infinite; }
+    .flow { stroke-dasharray: 6 10; animation: flow .9s linear infinite; }
+    @keyframes press { 0%, 8% { transform: translateY(0) } 14%, 58% { transform: translateY(6px) } 66%, 100% { transform: translateY(0) } }
+    @keyframes on { 0%, 10% { opacity: 0 } 18%, 58% { opacity: 1 } 68%, 100% { opacity: 0 } }
+    @keyframes flow { to { stroke-dashoffset: -32 } }
+    @media (prefers-reduced-motion: reduce) { .press, .on, .flow { animation: none } .on { opacity: 1 } }
+    text { font-family: "Segoe UI", Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif; }
+    .mono { font-family: "Cascadia Code", "JetBrains Mono", Consolas, ui-monospace, Menlo, monospace; }
+  </style>
+
+  <rect width="1280" height="400" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="400" rx="24" fill="url(#grid)"/>
+
+  <!-- copy -->
+  <text x="80" y="178" font-size="92" font-weight="800" fill="url(#title)" letter-spacing="-2">Any<tspan fill="#22d3ee">Shift</tspan></text>
+  <text x="84" y="232" font-size="27" fill="#a3adbb">Hold a key on <tspan fill="#ff9a4d" font-weight="600">any keyboard</tspan>.</text>
+  <text x="84" y="268" font-size="27" fill="#a3adbb">Get Logitech <tspan fill="#5ee3f5" font-weight="600">G-Shift</tspan> on your mouse.</text>
+  <g transform="translate(84 302)">
+    <rect width="372" height="40" rx="10" fill="#ffffff" fill-opacity=".04" stroke="#ffffff" stroke-opacity=".08"/>
+    <text class="mono" x="18" y="26" font-size="17" fill="#7d8796">SET <tspan fill="#c9d3e0">/input/gshift</tspan>  { on: <tspan fill="#5ee3f5">true</tspan> }</text>
+  </g>
+
+  <!-- key -->
+  <circle class="on" cx="790" cy="206" r="110" fill="url(#glowO)"/>
+  <rect x="728" y="148" width="124" height="124" rx="20" fill="#161a21" stroke="#2b323e" stroke-width="2"/>
+  <g class="press">
+    <rect x="740" y="154" width="100" height="94" rx="14" fill="url(#cap)" stroke="#3a4250" stroke-width="1.5"/>
+    <text class="mono" x="790" y="211" font-size="28" font-weight="700" fill="#ff7a1a" text-anchor="middle">F13</text>
+  </g>
+  <text x="790" y="306" font-size="15" fill="#5c6675" text-anchor="middle" letter-spacing="2">HOLD</text>
+
+  <!-- link -->
+  <path d="M866 206 C 930 150, 980 262, 1036 206" fill="none" stroke="#ffffff" stroke-opacity=".06" stroke-width="3"/>
+  <g class="on"><path class="flow" d="M866 206 C 930 150, 980 262, 1036 206" fill="none" stroke="url(#link)" stroke-width="3" stroke-linecap="round"/></g>
+  <text class="mono" x="951" y="152" font-size="13" fill="#4f5966" text-anchor="middle">ws://127.0.0.1:9010</text>
+
+  <!-- mouse: G-Shift layer behind, base in front -->
+  <circle class="on" cx="1124" cy="206" r="120" fill="url(#glowC)"/>
+  <path class="on" d="M1132 82c55 0 70 40 70 90v50c0 55-30 85-70 85s-70-30-70-85v-50c0-50 15-90 70-90z" fill="none" stroke="#22d3ee" stroke-width="2" stroke-dasharray="5 6"/>
+  <path d="M1112 98c55 0 70 40 70 90v50c0 55-30 85-70 85s-70-30-70-85v-50c0-50 15-90 70-90z" fill="#1b2029" stroke="#3a4250" stroke-width="2"/>
+  <path d="M1112 98v66M1042 166q70 12 140 0" fill="none" stroke="#3a4250" stroke-width="2"/>
+  <rect x="1106" y="118" width="12" height="28" rx="6" fill="#2b323e"/>
+  <rect x="1036" y="190" width="9" height="24" rx="4" fill="#2b323e"/>
+  <rect x="1036" y="219" width="9" height="24" rx="4" fill="#2b323e"/>
+  <rect class="on" x="1036" y="190" width="9" height="24" rx="4" fill="#22d3ee"/>
+  <rect class="on" x="1036" y="219" width="9" height="24" rx="4" fill="#22d3ee"/>
+  <text class="on" x="1112" y="268" font-size="15" font-weight="700" fill="#22d3ee" text-anchor="middle" letter-spacing="2">G-SHIFT</text>
+</svg>

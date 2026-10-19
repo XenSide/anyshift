@@ -3,6 +3,13 @@
 version = 4
 
 [[package]]
+name = "anyshift"
+version = "0.1.0"
+dependencies = [
+ "tungstenite",
+]
+
+[[package]]
 name = "block-buffer"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -85,13 +92,6 @@ dependencies = [
  "libc",
  "r-efi",
  "rand_core",
-]
-
-[[package]]
-name = "gshift_bridge"
-version = "0.1.0"
-dependencies = [
- "tungstenite",
 ]
 
 [[package]]
